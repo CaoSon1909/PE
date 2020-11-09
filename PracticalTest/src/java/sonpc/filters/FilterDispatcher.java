@@ -120,6 +120,9 @@ public class FilterDispatcher implements Filter {
                 if (resource.lastIndexOf(".html") > 0){
                     url = resource;
                 }
+                else if (resource.lastIndexOf(".jsp") > 0){
+                    url =resource;
+                }
             }
             
             chain.doFilter(request, response);
