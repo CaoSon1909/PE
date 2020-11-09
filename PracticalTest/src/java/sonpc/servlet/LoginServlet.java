@@ -18,6 +18,8 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class LoginServlet extends HttpServlet {
 
+    private final String INVALID_PAGE = "invalid.html";
+    private final String SEARCH_PAGE = "search.jsp";
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
