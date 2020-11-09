@@ -31,12 +31,15 @@ public class TblClubDAO implements Serializable{
         return 0;
     }
     
-    public String getNoOfChamp(String id){
+    public String getNoOfChamp(String id) throws SQLException{
         Connection con = null;
         PreparedStatement ps = null;
         ResultSet rs = null;
         try{
-            
+            con = DBHelpers.makeConnection();
+            if (con != null){
+                
+            }
         }
         finally{
             if (ps != null){
