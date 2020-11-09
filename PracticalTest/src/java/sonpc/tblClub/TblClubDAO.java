@@ -14,7 +14,7 @@ import java.util.List;
  */
 public class TblClubDAO implements Serializable{
     
-    public int searchClubChampionship(){
+    public int searchClubChampionship(int number){
         return 0;
     }
     
