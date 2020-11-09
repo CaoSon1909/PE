@@ -11,6 +11,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Vector;
 import javax.naming.NamingException;
 import sonpc.utils.DBHelpers;
 
@@ -36,7 +37,12 @@ public class TblClubDAO implements Serializable{
                 ps = con.prepareStatement(sql);
                 ps.setString(1, "2");
                 rs = ps.executeQuery();
-                
+                while(rs.next()){
+                    if (list == null){
+                        list = new Vector<>();
+                    }
+                    
+                }
             }
         }
         finally{
