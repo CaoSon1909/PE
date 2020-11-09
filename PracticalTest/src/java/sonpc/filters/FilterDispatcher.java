@@ -113,6 +113,10 @@ public class FilterDispatcher implements Filter {
             String url = LOGIN_PAGE;
             int lastIndex = uri.lastIndexOf("/");
             String resource = uri.substring(lastIndex+1);
+            if (resource.length() > 0){
+                //servlet
+                url = 
+            }
             
             chain.doFilter(request, response);
         } catch (Throwable t) {
