@@ -60,7 +60,7 @@ public class TblClubDAO implements Serializable{
         return null;
     }
     
-    public List<TblClubDTO> searchClubs(String noOfChamp) throws SQLException, NamingException{
+    public List<TblClubDTO> searchClubs(String id) throws SQLException, NamingException{
         Connection con = null;
         PreparedStatement ps = null;
         ResultSet rs = null;
