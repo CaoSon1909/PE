@@ -41,7 +41,9 @@ public class TblClubDAO implements Serializable{
                     if (list == null){
                         list = new Vector<>();
                     }
-                    String 
+                    String id = rs.getString("id");
+                    String clubName = rs.getString("clubName");
+                    String noOfChampion = rs.getString("noOfChampion");
                 }
             }
         }
