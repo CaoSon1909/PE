@@ -35,7 +35,10 @@ public class LogoutServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
         String url = SEARCH_PAGE;
         try{
-            
+            httpsession session = request.getSession(false);
+            if (session != null){
+                
+            }
         }
         finally{
             response.sendRedirect(url);
