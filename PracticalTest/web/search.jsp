@@ -27,8 +27,11 @@
             <table border="1">
                 <thead>
                     <tr>
-                        <th></th>
-                        <th></th>
+                        <th>ID</th>
+                        <th>ClubName</th>
+                        <th>noOfChampion</th>
+                        <th>Country</th>
+                        <th>Status</th>
                     </tr>
                 </thead>
                 <tbody>
