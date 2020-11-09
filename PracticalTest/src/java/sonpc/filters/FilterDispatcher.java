@@ -15,6 +15,7 @@ import javax.servlet.FilterConfig;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
+import javax.servlet.http.HttpServletRequest;
 
 /**
  *
@@ -106,6 +107,7 @@ public class FilterDispatcher implements Filter {
         
         Throwable problem = null;
         try {
+            HttpServletRequest req = (HttpServletRequest) request;
             
             
             chain.doFilter(request, response);
