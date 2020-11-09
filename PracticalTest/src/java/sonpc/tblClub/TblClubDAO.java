@@ -32,7 +32,17 @@ public class TblClubDAO implements Serializable{
     }
     
     public String getNoOfChamp(String id){
-        
+        Connection con = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        try{
+            
+        }
+        finally{
+            if (ps != null){
+                ps.close();
+            }
+        }
     }
     
     public List<TblClubDTO> searchClubs(String noOfChamp) throws SQLException, NamingException{
