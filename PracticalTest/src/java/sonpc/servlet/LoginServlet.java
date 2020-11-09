@@ -35,7 +35,8 @@ public class LoginServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
         String url = INVALID_PAGE;
         try{
-            
+            String username = request.getParameter("txtUsername");
+            String password = request.getParameter("txtPassword");
         }
         finally{
             request.getRequestDispatcher(url).forward(request, response);
