@@ -48,6 +48,9 @@ public class SearchServlet extends HttpServlet {
            int result = dao.searchClubChampionship(numOfChampion);
            if (result > 0){
                List<TblClubDTO> list = dao.searchClubs();
+               if (list != null){
+                   
+               }
            }
        }
        catch (NumberFormatException ex){
