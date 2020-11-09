@@ -35,14 +35,9 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                    </tr>
+                    <c:forEach var="" items="">
+                        
+                    </c:forEach>
                 </tbody>
             </table>
 
