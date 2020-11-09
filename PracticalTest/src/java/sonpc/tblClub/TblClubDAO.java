@@ -49,6 +49,7 @@ public class TblClubDAO implements Serializable{
                     
                     TblClubDTO dto = new TblClubDTO(id, clubName, noOfChampion, country, status);
                     
+                    list.add(dto);
                 }
             }
         }
