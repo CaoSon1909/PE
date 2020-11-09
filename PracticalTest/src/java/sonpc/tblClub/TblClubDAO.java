@@ -21,7 +21,7 @@ import sonpc.utils.DBHelpers;
  */
 public class TblClubDAO implements Serializable{
     
-    public int searchClubChampionship(int number){
+    public int searchClubChampionship(int number) throws SQLException, NamingException{
         List<TblClubDTO> list = searchClubs();
         if (list != null){
             
