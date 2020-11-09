@@ -7,10 +7,15 @@ package sonpc.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.naming.NamingException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import sonpc.tblClub.TblClubDAO;
 
 /**
  *
@@ -36,11 +41,17 @@ public class SearchServlet extends HttpServlet {
        try{
            String searchValue = request.getParameter("txtSearchvalue");
            int numOfChampion = Integer.parseInt(searchValue);
-           
+           //dao
+           TblClubDAO dao = new TblClubDAO();
+           int result = dao.searchClubChampionship(numOfChampion);
        }
        catch (NumberFormatException ex){
            log("SearchServlet - NumberFormatException:"+ex.getMessage());
-       }
+       } catch (SQLException ex) {
+            Logger.getLogger(SearchServlet.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (NamingException ex) {
+            Logger.getLogger(SearchServlet.class.getName()).log(Level.SEVERE, null, ex);
+        }
        finally{
            request.getRequestDispatcher(url).forward(request, response);
            out.close();
