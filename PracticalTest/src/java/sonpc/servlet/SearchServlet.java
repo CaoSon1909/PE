@@ -38,7 +38,8 @@ public class SearchServlet extends HttpServlet {
            int numOfChampion = Integer.parseInt(searchValue);
        }
        finally{
-           
+           request.getRequestDispatcher(url).forward(request, response);
+           out.close();
        }
     }
 
