@@ -6,6 +6,9 @@
 package sonpc.tblClub;
 
 import java.io.Serializable;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.util.List;
 
 /**
@@ -19,6 +22,10 @@ public class TblClubDAO implements Serializable{
     }
     
     public List<TblClubDTO> searchClubs(){
+        Connection con = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        List<TblClubDTO> list = null;
         
     }
     
