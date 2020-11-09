@@ -31,13 +31,17 @@ public class TblClubDAO implements Serializable{
         return 0;
     }
     
-    public String getNoOfChamp(String id) throws SQLException{
+    public String getNoOfChamp(String id) throws SQLException, NamingException{
         Connection con = null;
         PreparedStatement ps = null;
         ResultSet rs = null;
         try{
             con = DBHelpers.makeConnection();
             if (con != null){
+                String sql = "Select noOfChampion From tbl_Club Where id = ?";
+                ps = con.prepareStatement(sql);
+                ps.setString(1, id);
+                rs = ps.executeQuery()
                 
             }
         }
