@@ -22,9 +22,7 @@ import sonpc.utils.DBHelpers;
 public class TblClubDAO implements Serializable{
     
     public int searchClubChampionship(int number) throws SQLException, NamingException{
-        String no
-        List<TblClubDTO> list = searchClubs(number);
-        if (number >= )
+        List<TblClubDTO> list = searchClubs();
         if (list != null){
             return list.size();
         }
