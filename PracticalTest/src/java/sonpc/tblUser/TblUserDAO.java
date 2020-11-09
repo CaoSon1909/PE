@@ -6,11 +6,22 @@
 package sonpc.tblUser;
 
 import java.io.Serializable;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 /**
  *
  * @author ACER
  */
 public class TblUserDAO implements Serializable{
+    
+    public boolean checkLogin(String userId, String password){
+        Connection con = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        
+        return false;
+    }
     
 }
