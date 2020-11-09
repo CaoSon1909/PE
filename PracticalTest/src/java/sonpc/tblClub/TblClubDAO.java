@@ -47,6 +47,8 @@ public class TblClubDAO implements Serializable{
                     String country = rs.getString("country");
                     boolean status = rs.getBoolean("status");
                     
+                    TblClubDTO dto = new TblClubDTO(id, clubName, noOfChampion, country, status);
+                    
                 }
             }
         }
