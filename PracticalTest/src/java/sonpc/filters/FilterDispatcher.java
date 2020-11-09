@@ -16,6 +16,7 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -110,6 +111,7 @@ public class FilterDispatcher implements Filter {
         try {
             HttpServletRequest req = (HttpServletRequest) request;
             String uri = req.getRequestURI();
+            
             String url = LOGIN_PAGE;
             int lastIndex = uri.lastIndexOf("/");
             String resource = uri.substring(lastIndex + 1);
@@ -123,6 +125,16 @@ public class FilterDispatcher implements Filter {
                     url = resource;
                 }
             }
+            HttpSession session = req.getSession(false);
+            if (session == null && !resource.equals("login")){
+                url = LOGIN_PAGE;
+            }
+            if (session!= null)
+            System.out.println(session.getId());
+            else System.out.println("AAAAA");
+            System.out.println(url);
+            System.out.println(resource);
+            
             if (url != null) {
                 req.getRequestDispatcher(url).forward(request, response);
             } else {

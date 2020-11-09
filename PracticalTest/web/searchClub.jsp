@@ -31,6 +31,7 @@
                     <th>ClubName</th>
                     <th>No Of Championship</th>
                     <th>Country</th>
+                    <th>Insert Achivement</th>
                 </tr>
             </thead>
             <tbody>
@@ -48,14 +49,21 @@
                         <td>
                             ${dto.country}
                         </td>
+                        <td>
+                            <c:url var="insertLink" value="insert" scope="request">
+                                <c:param name="id" value="${dto.id}"/>
+                                <c:param name="lastSearchValue" value="${param.txtSearchvalue}"/>
+                            </c:url>
+                            <a href="${insertLink}">Insert Achievement</a>
+                        </td>
                     </tr>
-                </c:forEach>
-            </tbody>
-        </table>
+            </c:forEach>
+        </tbody>
+    </table>
 
-    </c:if>
-    <c:if test="${empty searchResult}">
-        <h2>No record is matched!!!</h2>
-    </c:if>
+</c:if>
+<c:if test="${empty searchResult}">
+    <h2>No record is matched!!!</h2>
+</c:if>
 </body>
 </html>

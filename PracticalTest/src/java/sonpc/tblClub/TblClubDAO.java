@@ -19,59 +19,44 @@ import sonpc.utils.DBHelpers;
  *
  * @author ACER
  */
-public class TblClubDAO implements Serializable{
-    
-    public int searchClubChampionship(int number) throws SQLException, NamingException{
+public class TblClubDAO implements Serializable {
+
+    List<TblClubDTO> globalList;
+
+    public List<TblClubDTO> getGlobalList() {
+        return globalList;
+    }
+
+    public int searchClubChampionship(int number) throws SQLException, NamingException, NumberFormatException {
+        globalList = new Vector<>();
         List<TblClubDTO> list = searchClubs();
         if (list != null){
-            return list.size();
+            for (TblClubDTO dto : list) {
+                int noOfChamp = Integer.parseInt(dto.getNoOfChampion());
+                if (noOfChamp >= number) {
+                    globalList.add(dto);
+                }
+            }
+            if (globalList != null) {
+                return globalList.size();
+            }
         }
         return 0;
     }
-    
-    public String getNoOfChamp(String id) throws SQLException, NamingException{
-        Connection con = null;
-        PreparedStatement ps = null;
-        ResultSet rs = null;
-        try{
-            con = DBHelpers.makeConnection();
-            if (con != null){
-                String sql = "Select noOfChampion From tbl_Club Where id = ?";
-                ps = con.prepareStatement(sql);
-                ps.setString(1, id);
-                rs = ps.executeQuery();
-                if (rs.next()){
-                    String noOfChampion = rs.getString("noOfChampion");
-                    return noOfChampion;
-                }
-                
-            }
-        }
-        finally{
-            if (ps != null){
-                ps.close();
-            }
-            if (con != null){
-                con.close();
-            }
-        }
-        return null;
-    }
-    
-    public List<TblClubDTO> searchClubs() throws SQLException, NamingException{
+
+    public List<TblClubDTO> searchClubs() throws SQLException, NamingException {
         Connection con = null;
         PreparedStatement ps = null;
         ResultSet rs = null;
         List<TblClubDTO> list = null;
-        try{
+        try {
             con = DBHelpers.makeConnection();
-            if (con != null){
-                String sql = "Select id ,clubName, noOfChampion, country, status From tbl_Club Where noOfChampion = ?";
+            if (con != null) {
+                String sql = "Select id ,clubName, noOfChampion, country, status From tbl_Club";
                 ps = con.prepareStatement(sql);
-                ps.setString(1, "3");
                 rs = ps.executeQuery();
-                while(rs.next()){
-                    if (list == null){
+                while (rs.next()) {
+                    if (list == null) {
                         list = new Vector<>();
                     }
                     String id = rs.getString("id");
@@ -79,23 +64,22 @@ public class TblClubDAO implements Serializable{
                     String noOfChampion = rs.getString("noOfChampion");
                     String country = rs.getString("country");
                     boolean status = rs.getBoolean("status");
-                    
+
                     TblClubDTO dto = new TblClubDTO(id, clubName, noOfChampion, country, status);
-                    
+
                     list.add(dto);
                 }
                 return list;
             }
-        }
-        finally{
-            if (ps != null){
+        } finally {
+            if (ps != null) {
                 ps.close();
             }
-            if (con != null){
+            if (con != null) {
                 ps.close();
             }
         }
         return null;
     }
-    
+
 }

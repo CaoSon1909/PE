@@ -7,26 +7,20 @@ package sonpc.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.SQLException;
-import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.naming.NamingException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import sonpc.tblClub.TblClubDAO;
-import sonpc.tblClub.TblClubDTO;
 
 /**
  *
  * @author ACER
  */
-public class SearchServlet extends HttpServlet {
+public class InsertServlet extends HttpServlet {
 
-    private final String SEARCH_JSP = "searchClub.jsp";
+    private final String INSERT_PAGE = "insert.jsp";
+
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -39,32 +33,14 @@ public class SearchServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-       PrintWriter out = response.getWriter();
-       String url = SEARCH_JSP;
-       try{
-           String searchValue = request.getParameter("txtSearchvalue");
-           int numOfChampion = Integer.parseInt(searchValue);
-           //dao
-           TblClubDAO dao = new TblClubDAO();
-           int result = dao.searchClubChampionship(numOfChampion);
-           if (result > 0){
-               List<TblClubDTO> list = dao.getGlobalList();
-               if (list != null){
-                   request.setAttribute("SEARCH_RESULT", list);
-               }
-           }
-       }
-       catch (NumberFormatException ex){
-           log("SearchServlet - NumberFormatException:"+ex.getMessage());
-       } catch (SQLException ex) {
-            Logger.getLogger(SearchServlet.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (NamingException ex) {
-            Logger.getLogger(SearchServlet.class.getName()).log(Level.SEVERE, null, ex);
+        PrintWriter out = response.getWriter();
+        String url = INSERT_PAGE;
+        try {
+
+        } finally {
+            request.getRequestDispatcher(url).forward(request, response);
+            out.close();
         }
-       finally{
-           request.getRequestDispatcher(url).forward(request, response);
-           out.close();
-       }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

@@ -25,7 +25,7 @@ import sonpc.tblUser.TblUserDAO;
 public class LoginServlet extends HttpServlet {
 
     private final String INVALID_PAGE = "invalid.html";
-    private final String SEARCH_PAGE = "search.jsp";
+    private final String SEARCH_PAGE = "searchClub.jsp";
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -51,6 +51,7 @@ public class LoginServlet extends HttpServlet {
                 String fullName = dao.getFullName(username);
                 HttpSession session = request.getSession();
                 session.setAttribute("FULLNAME", fullName);
+                System.out.println(session.getId());
             }
             
         }
