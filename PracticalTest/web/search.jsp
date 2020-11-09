@@ -24,7 +24,25 @@
         
         <c:set var="searchResult" value="${requestScope.SEARCH_RESULT}"/>
         <c:if test="${not empty searchResult}">
-            
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+
         </c:if>
         <c:if test="${empty searchResult}">
             <h2>No record is matched!!!</h2>
