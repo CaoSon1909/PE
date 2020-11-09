@@ -106,13 +106,15 @@ public class FilterDispatcher implements Filter {
         
         Throwable problem = null;
         try {
+            
+            
             chain.doFilter(request, response);
         } catch (Throwable t) {
             // If an exception is thrown somewhere down the filter chain,
             // we still want to execute our after processing, and then
             // rethrow the problem after that.
             problem = t;
-            t.printStackTrace();
+            log("FilterDispatcher :"+t.getMessage());
         }
         
         doAfterProcessing(request, response);
