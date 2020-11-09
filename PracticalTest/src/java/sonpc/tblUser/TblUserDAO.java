@@ -9,6 +9,9 @@ import java.io.Serializable;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
+import javax.naming.NamingException;
+import sonpc.utils.DBHelpers;
 
 /**
  *
@@ -16,12 +19,15 @@ import java.sql.ResultSet;
  */
 public class TblUserDAO implements Serializable{
     
-    public boolean checkLogin(String userId, String password){
+    public boolean checkLogin(String userId, String password) throws SQLException, NamingException{
         Connection con = null;
         PreparedStatement ps = null;
         ResultSet rs = null;
         try{
-            
+            con = DBHelpers.makeConnection();
+            if (con != null){
+                String sql = "Select fullName, isManager From tbl_User Where userId = ? and password = ?";
+            }
         }
         finally{
             if (ps != null){
