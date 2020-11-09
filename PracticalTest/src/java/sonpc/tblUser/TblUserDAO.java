@@ -60,7 +60,7 @@ public class TblUserDAO implements Serializable{
                 rs = ps.executeQuery();
                 if (rs.next()){
                     String fullName = rs.getString("fullName");
-                    
+                    return fullName;
                 }
             }
         }
@@ -72,6 +72,7 @@ public class TblUserDAO implements Serializable{
                 con.close();
             }
         }
+        return null;
     }
     
 }
