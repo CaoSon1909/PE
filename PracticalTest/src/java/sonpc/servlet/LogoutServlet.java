@@ -38,7 +38,8 @@ public class LogoutServlet extends HttpServlet {
             
         }
         finally{
-            
+            response.sendRedirect(url);
+            out.close();
         }
     }
 
