@@ -9,6 +9,7 @@ import java.io.Serializable;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.List;
 
 /**
@@ -21,7 +22,7 @@ public class TblClubDAO implements Serializable{
         return 0;
     }
     
-    public List<TblClubDTO> searchClubs(){
+    public List<TblClubDTO> searchClubs() throws SQLException{
         Connection con = null;
         PreparedStatement ps = null;
         ResultSet rs = null;
@@ -30,7 +31,12 @@ public class TblClubDAO implements Serializable{
             
         }
         finally{
-            
+            if (ps != null){
+                ps.close();
+            }
+            if (con != null){
+                ps.close();
+            }
         }
     }
     
