@@ -44,6 +44,7 @@ public class SearchServlet extends HttpServlet {
            //dao
            TblClubDAO dao = new TblClubDAO();
            int result = dao.searchClubChampionship(numOfChampion);
+           
        }
        catch (NumberFormatException ex){
            log("SearchServlet - NumberFormatException:"+ex.getMessage());
