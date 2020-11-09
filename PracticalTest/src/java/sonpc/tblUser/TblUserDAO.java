@@ -5,10 +5,12 @@
  */
 package sonpc.tblUser;
 
+import java.io.Serializable;
+
 /**
  *
  * @author ACER
  */
-public class TblUserDAO {
+public class TblUserDAO implements Serializable{
     
 }
