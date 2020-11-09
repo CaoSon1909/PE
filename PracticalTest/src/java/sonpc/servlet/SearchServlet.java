@@ -8,6 +8,7 @@ package sonpc.servlet;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.naming.NamingException;
@@ -16,6 +17,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import sonpc.tblClub.TblClubDAO;
+import sonpc.tblClub.TblClubDTO;
 
 /**
  *
@@ -45,7 +47,7 @@ public class SearchServlet extends HttpServlet {
            TblClubDAO dao = new TblClubDAO();
            int result = dao.searchClubChampionship(numOfChampion);
            if (result > 0){
-               
+               List<TblClubDTO> list = dao.searchClubs();
            }
        }
        catch (NumberFormatException ex){
