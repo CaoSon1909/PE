@@ -5,10 +5,12 @@
  */
 package sonpc.tblClub;
 
+import java.io.Serializable;
+
 /**
  *
  * @author ACER
  */
-public class TblClubDAO {
+public class TblClubDAO implements Serializable{
     
 }
