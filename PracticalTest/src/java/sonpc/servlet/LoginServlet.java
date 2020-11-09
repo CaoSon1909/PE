@@ -48,8 +48,9 @@ public class LoginServlet extends HttpServlet {
             boolean result = dao.checkLogin(username, password);
             if (result){
                 url = SEARCH_PAGE;
+                String fullName = dao.getFullName(username);
                 HttpSession session = request.getSession();
-                session
+                session.setAttribute("FULLNAME", fullName);
             }
             
         }
