@@ -23,7 +23,11 @@
         </form> <br/>
         
         <c:set var="searchResult" value="${requestScope.SEARCH_RESULT}"/>
-        ${requestScope.SEARCH_RESULT}
-        
+        <c:if test="${not empty searchResult}">
+            
+        </c:if>
+        <c:if test="${empty searchResult}">
+            
+        </c:if>
     </body>
 </html>
