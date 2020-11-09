@@ -49,7 +49,7 @@ public class SearchServlet extends HttpServlet {
            if (result > 0){
                List<TblClubDTO> list = dao.searchClubs();
                if (list != null){
-                   
+                   request.setAttribute("SEARCH_RESULT", list);
                }
            }
        }

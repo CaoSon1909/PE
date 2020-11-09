@@ -19,7 +19,9 @@
         <form action="search">
             Search Value: <input type="text" name="txtSearchvalue" value="" /> <br/>
             <input type="submit" value="Search" name="btAction" />
-        </form>
+        </form> <br/>
+        
+        
         
     </body>
 </html>
