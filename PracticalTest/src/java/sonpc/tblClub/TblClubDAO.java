@@ -42,6 +42,9 @@ public class TblClubDAO implements Serializable{
             if (ps != null){
                 ps.close();
             }
+            if (con != null){
+                con.close();
+            }
         }
     }
     
