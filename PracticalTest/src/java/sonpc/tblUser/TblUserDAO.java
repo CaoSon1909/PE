@@ -47,4 +47,21 @@ public class TblUserDAO implements Serializable{
         return false;
     }
     
+    public String getFullName(String userId){
+        Connection con = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        try{
+            
+        }
+        finally{
+            if (ps != null){
+                ps.close();
+            }
+            if (con != null){
+                con.close();
+            }
+        }
+    }
+    
 }
