@@ -24,9 +24,8 @@ public class TblClubDAO implements Serializable{
     public int searchClubChampionship(int number) throws SQLException, NamingException{
         List<TblClubDTO> list = searchClubs();
         if (list != null){
-            
+            return list.size();
         }
-        
         return 0;
     }
     
