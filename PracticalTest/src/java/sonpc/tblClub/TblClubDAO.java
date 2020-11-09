@@ -23,6 +23,9 @@ public class TblClubDAO implements Serializable{
     
     public int searchClubChampionship(int number){
         List<TblClubDTO> list = searchClubs();
+        if (list != null){
+            
+        }
         
         return 0;
     }
