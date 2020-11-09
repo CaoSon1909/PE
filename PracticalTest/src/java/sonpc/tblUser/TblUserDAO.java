@@ -30,7 +30,10 @@ public class TblUserDAO implements Serializable{
                 ps = con.prepareStatement(sql);
                 ps.setString(1, userId);
                 ps.setString(2, password);
-                
+                rs = ps.executeQuery();
+                if (rs.next()){
+                    return true;
+                }
             }
         }
         finally{
