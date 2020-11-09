@@ -47,12 +47,15 @@ public class TblUserDAO implements Serializable{
         return false;
     }
     
-    public String getFullName(String userId){
+    public String getFullName(String userId) throws SQLException{
         Connection con = null;
         PreparedStatement ps = null;
         ResultSet rs = null;
         try{
-            
+            con = DBHelpers.makeConnection();
+            if (con != null){
+                
+            }
         }
         finally{
             if (ps != null){
