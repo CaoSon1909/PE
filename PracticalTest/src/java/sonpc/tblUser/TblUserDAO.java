@@ -57,6 +57,11 @@ public class TblUserDAO implements Serializable{
                 String sql = "Select fullName From tbl_User Where userId = ?";
                 ps = con.prepareStatement(sql);
                 ps.setString(1, userId);
+                rs = ps.executeQuery();
+                if (rs.next()){
+                    String fullName = rs.getString("fullName");
+                    
+                }
             }
         }
         finally{
