@@ -37,6 +37,7 @@ public class LoginServlet extends HttpServlet {
         try{
             String username = request.getParameter("txtUsername");
             String password = request.getParameter("txtPassword");
+            
         }
         finally{
             request.getRequestDispatcher(url).forward(request, response);
