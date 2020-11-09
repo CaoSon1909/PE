@@ -16,5 +16,10 @@
         <h1>Search Clubs' Achivement</h1>
         <a href="logout">Log Out</a> <br/>
         
+        <form action="search">
+            Search Value: <input type="text" name="txtSearchvalue" value="" /> <br/>
+            <input type="submit" value="Search" name="btAction" />
+        </form>
+        
     </body>
 </html>
