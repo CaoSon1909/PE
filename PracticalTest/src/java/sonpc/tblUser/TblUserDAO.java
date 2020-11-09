@@ -20,7 +20,17 @@ public class TblUserDAO implements Serializable{
         Connection con = null;
         PreparedStatement ps = null;
         ResultSet rs = null;
-        
+        try{
+            
+        }
+        finally{
+            if (ps != null){
+                ps.close();
+            }
+            if (con != null){
+                con.close();
+            }
+        }
         return false;
     }
     
