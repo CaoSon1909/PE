@@ -29,7 +29,7 @@ public class TblClubDAO implements Serializable{
         return 0;
     }
     
-    public List<TblClubDTO> searchClubs() throws SQLException, NamingException{
+    public List<TblClubDTO> searchClubs(String noOfChamp) throws SQLException, NamingException{
         Connection con = null;
         PreparedStatement ps = null;
         ResultSet rs = null;
@@ -39,7 +39,7 @@ public class TblClubDAO implements Serializable{
             if (con != null){
                 String sql = "Select id ,clubName, noOfChampion, country, status From tbl_Club Where noOfChampion = ?";
                 ps = con.prepareStatement(sql);
-                ps.setString(1, "2");
+                ps.setString(1, noOfChamp);
                 rs = ps.executeQuery();
                 while(rs.next()){
                     if (list == null){
