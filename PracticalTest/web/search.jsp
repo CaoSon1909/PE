@@ -22,8 +22,8 @@
             <input type="submit" value="Search" name="btAction" />
         </form> <br/>
         
-        <c:set var="searchResult" value="${requestScope.SEARCH_RESULT}"
-        
+        <c:set var="searchResult" value="${requestScope.SEARCH_RESULT}"/>
+        ${requestScope.SEARCH_RESULT}
         
     </body>
 </html>
