@@ -36,6 +36,10 @@ public class SearchServlet extends HttpServlet {
        try{
            String searchValue = request.getParameter("txtSearchvalue");
            int numOfChampion = Integer.parseInt(searchValue);
+           
+       }
+       catch (NumberFormatException ex){
+           log("SearchServlet - NumberFormatException:"+ex.getMessage());
        }
        finally{
            request.getRequestDispatcher(url).forward(request, response);
