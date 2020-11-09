@@ -27,6 +27,10 @@ public class TblUserDAO implements Serializable{
             con = DBHelpers.makeConnection();
             if (con != null){
                 String sql = "Select fullName, isManager From tbl_User Where userId = ? and password = ?";
+                ps = con.prepareStatement(sql);
+                ps.setString(1, userId);
+                ps.setString(2, password);
+                
             }
         }
         finally{
