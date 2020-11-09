@@ -27,7 +27,7 @@
             
         </c:if>
         <c:if test="${empty searchResult}">
-            
+            <h2>No record is matched!!!</h2>
         </c:if>
     </body>
 </html>
