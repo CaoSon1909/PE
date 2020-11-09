@@ -108,7 +108,8 @@ public class FilterDispatcher implements Filter {
         Throwable problem = null;
         try {
             HttpServletRequest req = (HttpServletRequest) request;
-            
+            String uri = req.getRequestURI();
+            String url = LOGIN_PAGE;
             
             chain.doFilter(request, response);
         } catch (Throwable t) {
