@@ -15,6 +15,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import sonpc.tblUser.TblUserDAO;
 
 /**
@@ -46,7 +47,9 @@ public class LoginServlet extends HttpServlet {
             TblUserDAO dao = new TblUserDAO();
             boolean result = dao.checkLogin(username, password);
             if (result){
-                
+                url = SEARCH_PAGE;
+                HttpSession session = request.getSession();
+                session
             }
             
         }
