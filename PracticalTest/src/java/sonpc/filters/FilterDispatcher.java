@@ -112,6 +112,7 @@ public class FilterDispatcher implements Filter {
             String uri = req.getRequestURI();
             String url = LOGIN_PAGE;
             int lastIndex = uri.lastIndexOf("/");
+            String resource = uri.substring(lastIndex+1);
             
             chain.doFilter(request, response);
         } catch (Throwable t) {
