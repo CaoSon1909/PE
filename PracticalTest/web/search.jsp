@@ -50,6 +50,7 @@
                             ${dto.country}
                         </td>
                         <td>
+                            <a href="insert">Insert Achivement</a>
                         </td>
                     </tr>
                 </c:forEach>
