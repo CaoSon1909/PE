@@ -34,6 +34,13 @@ public class LoginServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         String url = INVALID_PAGE;
+        try{
+            
+        }
+        finally{
+            request.getRequestDispatcher(url).forward(request, response);
+            out.close();
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
