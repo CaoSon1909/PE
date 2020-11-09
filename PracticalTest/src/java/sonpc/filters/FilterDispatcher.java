@@ -111,6 +111,7 @@ public class FilterDispatcher implements Filter {
             HttpServletRequest req = (HttpServletRequest) request;
             String uri = req.getRequestURI();
             String url = LOGIN_PAGE;
+            int lastIndex = uri.lastIndexOf("/");
             
             chain.doFilter(request, response);
         } catch (Throwable t) {
