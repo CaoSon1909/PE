@@ -40,10 +40,18 @@
                         <td>
                             ${dto.id}
                         </td>
-                        <td>ClubName</td>
-                        <td>noOfChampion</td>
-                        <td>Country</td>
-                        <td>Status</td>
+                        <td>
+                            ${dto.clubName}
+                        </td>
+                        <td>
+                            ${dto.noOfChampion}
+                        </td>
+                        <td>
+                            ${dto.country}
+                        </td>
+                        <td>
+                            ${dto.status}
+                        </td>
                     </tr>
                 </c:forEach>
             </tbody>
