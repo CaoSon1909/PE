@@ -7,6 +7,10 @@ package sonpc.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.naming.NamingException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -40,9 +44,17 @@ public class LoginServlet extends HttpServlet {
             String password = request.getParameter("txtPassword");
             //dao
             TblUserDAO dao = new TblUserDAO();
-            boolean result = dao.checkLogin(username, password)
+            boolean result = dao.checkLogin(username, password);
+            if (result){
+                
+            }
+            
         }
-        finally{
+        catch (SQLException ex) {
+            Logger.getLogger(LoginServlet.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (NamingException ex) {
+            Logger.getLogger(LoginServlet.class.getName()).log(Level.SEVERE, null, ex);
+        }        finally{
             request.getRequestDispatcher(url).forward(request, response);
             out.close();
         }
