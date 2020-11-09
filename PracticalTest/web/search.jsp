@@ -13,7 +13,7 @@
     <font color="red">Welcome, ${sessionScope.FULLNAME}</font>
     </head>
     <body>
-        <h1>Search Clubs</h1>
+        <h1>Search Clubs' Achivement</h1>
         <a href="logout">Log Out</a>
     </body>
 </html>
