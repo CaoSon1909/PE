@@ -31,7 +31,6 @@
                     <th>ClubName</th>
                     <th>No Of Championship</th>
                     <th>Country</th>
-                    <th>Insert Achivement</th>
                 </tr>
             </thead>
             <tbody>
@@ -48,9 +47,6 @@
                         </td>
                         <td>
                             ${dto.country}
-                        </td>
-                        <td>
-                            <a href="insert">Insert Achivement</a>
                         </td>
                     </tr>
                 </c:forEach>
