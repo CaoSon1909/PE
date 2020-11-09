@@ -117,7 +117,9 @@ public class FilterDispatcher implements Filter {
                 //servlet
                 url = resource.substring(0,1).toUpperCase()+resource.substring(1)+"Servlet";
                 //html
-                
+                if (resource.lastIndexOf(".html") > 0){
+                    url = resource;
+                }
             }
             
             chain.doFilter(request, response);
