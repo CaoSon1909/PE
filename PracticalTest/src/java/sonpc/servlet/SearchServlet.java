@@ -34,6 +34,7 @@ public class SearchServlet extends HttpServlet {
        PrintWriter out = response.getWriter();
        String url = SEARCH_JSP;
        try{
+           String searchValue = request.getParameter("txtSearchvalue");
            
        }
        finally{
