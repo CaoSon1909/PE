@@ -11,6 +11,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
+import javax.naming.NamingException;
+import sonpc.utils.DBHelpers;
 
 /**
  *
@@ -22,13 +24,16 @@ public class TblClubDAO implements Serializable{
         return 0;
     }
     
-    public List<TblClubDTO> searchClubs() throws SQLException{
+    public List<TblClubDTO> searchClubs() throws SQLException, NamingException{
         Connection con = null;
         PreparedStatement ps = null;
         ResultSet rs = null;
         List<TblClubDTO> list = null;
         try{
-            
+            con = DBHelpers.makeConnection();
+            if (con != null){
+                String sql = "Select id ,clubName, noOfChampion country, status From tbl_Club Where noOfChampion = ?";
+            }
         }
         finally{
             if (ps != null){
