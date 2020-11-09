@@ -18,6 +18,7 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class SearchServlet extends HttpServlet {
 
+    private final String SEARCH_JSP = "search.jsp";
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
