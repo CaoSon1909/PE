@@ -13,4 +13,8 @@ import java.io.Serializable;
  */
 public class TblClubDAO implements Serializable{
     
+    public List<TblClubDTO> searchClubs(){
+        
+    }
+    
 }
