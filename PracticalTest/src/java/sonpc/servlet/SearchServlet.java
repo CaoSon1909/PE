@@ -35,7 +35,7 @@ public class SearchServlet extends HttpServlet {
        String url = SEARCH_JSP;
        try{
            String searchValue = request.getParameter("txtSearchvalue");
-           
+           int numOfChampion = Integer.parseInt(searchValue);
        }
        finally{
            
