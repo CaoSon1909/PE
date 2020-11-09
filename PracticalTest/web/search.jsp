@@ -10,6 +10,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Search Page</title>
+    <font color="red">Welcome, ${sessionScope.FULLNAME}</font>
     </head>
     <body>
         <h1>Search Clubs</h1>
