@@ -27,11 +27,11 @@
         <table border="1">
             <thead>
                 <tr>
-                    <th>ID</th>
+                    <th>No.</th>
                     <th>ClubName</th>
-                    <th>noOfChampion</th>
+                    <th>No Of Championship</th>
                     <th>Country</th>
-                    <th>Status</th>
+                    <th>Insert Achivement</th>
                 </tr>
             </thead>
             <tbody>
@@ -50,7 +50,6 @@
                             ${dto.country}
                         </td>
                         <td>
-                            ${dto.status}
                         </td>
                     </tr>
                 </c:forEach>
