@@ -37,11 +37,13 @@
             <tbody>
                 <c:forEach var="dto" items="${searchResult}">
                     <tr>
-                        <th>ID</th>
-                        <th>ClubName</th>
-                        <th>noOfChampion</th>
-                        <th>Country</th>
-                        <th>Status</th>
+                        <td>
+                            ${dto.id}
+                        </td>
+                        <td>ClubName</td>
+                        <td>noOfChampion</td>
+                        <td>Country</td>
+                        <td>Status</td>
                     </tr>
                 </c:forEach>
             </tbody>
