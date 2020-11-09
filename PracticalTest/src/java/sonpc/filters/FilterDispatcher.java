@@ -23,7 +23,7 @@ import javax.servlet.http.HttpServletRequest;
  */
 public class FilterDispatcher implements Filter {
     
-    private final String LOGIN_PAGE = "login.html"
+    private final String LOGIN_PAGE = "login.html";
     private static final boolean debug = true;
 
     // The filter configuration object we are associated with.  If
