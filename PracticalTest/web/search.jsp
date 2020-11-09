@@ -12,20 +12,30 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Search Page</title>
     <font color="red">Welcome, ${sessionScope.FULLNAME}</font>
-    </head>
-    <body>
-        <h1>Search Clubs' Achivement</h1>
-        <a href="logout">Log Out</a> <br/>
-        
-        <form action="search">
-            Search Value: <input type="text" name="txtSearchvalue" value="" /> <br/>
-            <input type="submit" value="Search" name="btAction" />
-        </form> <br/>
-        
-        <c:set var="searchResult" value="${requestScope.SEARCH_RESULT}"/>
-        <c:if test="${not empty searchResult}">
-            <table border="1">
-                <thead>
+</head>
+<body>
+    <h1>Search Clubs' Achivement</h1>
+    <a href="logout">Log Out</a> <br/>
+
+    <form action="search">
+        Search Value: <input type="text" name="txtSearchvalue" value="" /> <br/>
+        <input type="submit" value="Search" name="btAction" />
+    </form> <br/>
+
+    <c:set var="searchResult" value="${requestScope.SEARCH_RESULT}"/>
+    <c:if test="${not empty searchResult}">
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>ClubName</th>
+                    <th>noOfChampion</th>
+                    <th>Country</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <c:forEach var="dto" items="${searchResult}">
                     <tr>
                         <th>ID</th>
                         <th>ClubName</th>
@@ -33,17 +43,13 @@
                         <th>Country</th>
                         <th>Status</th>
                     </tr>
-                </thead>
-                <tbody>
-                    <c:forEach var="" items="">
-                        
-                    </c:forEach>
-                </tbody>
-            </table>
+                </c:forEach>
+            </tbody>
+        </table>
 
-        </c:if>
-        <c:if test="${empty searchResult}">
-            <h2>No record is matched!!!</h2>
-        </c:if>
-    </body>
+    </c:if>
+    <c:if test="${empty searchResult}">
+        <h2>No record is matched!!!</h2>
+    </c:if>
+</body>
 </html>
