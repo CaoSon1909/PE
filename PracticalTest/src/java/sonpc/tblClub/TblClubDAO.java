@@ -32,7 +32,8 @@ public class TblClubDAO implements Serializable{
         try{
             con = DBHelpers.makeConnection();
             if (con != null){
-                String sql = "Select id ,clubName, noOfChampion country, status From tbl_Club Where noOfChampion = 2";
+                String sql = "Select id ,clubName, noOfChampion country, status From tbl_Club Where noOfChampion = ?";
+                ps = con.prepareStatement(sql);
             }
         }
         finally{
