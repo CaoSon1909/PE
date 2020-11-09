@@ -22,6 +22,8 @@ import sonpc.utils.DBHelpers;
 public class TblClubDAO implements Serializable{
     
     public int searchClubChampionship(int number){
+        List<TblClubDTO> list = searchClubs();
+        
         return 0;
     }
     
@@ -51,6 +53,7 @@ public class TblClubDAO implements Serializable{
                     
                     list.add(dto);
                 }
+                return list;
             }
         }
         finally{
@@ -61,6 +64,7 @@ public class TblClubDAO implements Serializable{
                 ps.close();
             }
         }
+        return null;
     }
     
 }
